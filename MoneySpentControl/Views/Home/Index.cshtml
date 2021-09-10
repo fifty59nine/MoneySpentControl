@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MoneySpentControl</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        
+        <style>
+            form{
+                margin: auto;
+                margin-left: 2%;
+                margin-right: 2%;
+                margin-top: 2%;
+                padding: 2%;
+                background-color: gray;
+                border-radius: 5px;
+                border: 5px solid black;
+            }
+        </style>
+    </head>
+    <body>
+
+        <form action="/gg/send" method="POST">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Summa</label>
+                <input type="number" class="form-control" id="Summa" name="summ">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Category</label>
+                <select class="form-control" id="Category" name="cat">
+                    <option>Продукты</option>
+                    <option>Развлечения</option>
+                    <option>Одежда</option>
+                    <option>Быт</option>
+                    <option>Другое</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea class="form-control" id="Desc" rows="1" name="desc"></textarea>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="Spent" value="option1" checked>
+                <label class="form-check-label" for="Spent">
+                    Spent
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="Earned" value="option2">
+                <label class="form-check-label" for="Earned">
+                    Earned
+                </label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary mb-2" style="float: right;width: 10%;">Post</button>
+            </div>
+        </form>
+        <br />
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="History">Lookup history</a>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </body>
+</html>
